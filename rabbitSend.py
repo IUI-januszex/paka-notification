@@ -15,16 +15,16 @@ class RabbitMqSend():
         print(" [x] Sent message")
         connection.close()
 
-    
 
 message = {
-    'receiver_email': "michal.zawadzki66669@gmail.com", 
+    'receiverEmail': "michal.zawadzki66669@gmail.com", 
+    'typeMessage': "1", 
     'name': '<br>',
-    'surname': 'zawadzki',
-    'numberParcel': '67',
-    'pin': '123',
-    'date': 'paz',
-    'link':"link"
+    'surname': None,
+    'numberParcel': None,
+    'pin': 56,
+    'date': None,
+    'link': None
 }
 o=RabbitMqSend()
 o.send(message)

@@ -20,11 +20,8 @@ class SenderMail():
         message["From"] = sender_email
         message["To"] = receiver_email
 
-
-
         message.attach(MIMEText(self.html, "html"))
         msgBody = message.as_string()
-
 
         server = SMTP('smtp.gmail.com', 587)
         server.starttls()

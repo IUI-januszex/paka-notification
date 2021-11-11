@@ -9,18 +9,17 @@ def main():
     channel.queue_declare(queue=nameQueue)
     def callback(ch, method, properties, body):
         jsonData=json.loads(body)
-        receiver_email=jsonData['receiver_email']
-        name=jsonData['name']
-        surname=jsonData['surname']
-        numberParcel=jsonData['numberParcel']
-        pin=jsonData['pin']
-        date=jsonData['date']
-        link=jsonData['link']
-        mailHTML=MailHTML(name=name,surname=surname,numberParcel=numberParcel,pin=pin,date=date,link=link)
-        html = mailHTML.generateHTML()
-        senderMail=SenderMail(receiver_email,html)
-        senderMail.sendMail()
-        print("mail wyslany do ",receiver_email)
+        receiverEmail=jsonData['receiverEmail']
+        typeMessage=jsonData['typeMessage']
+        allowedTypesMessage=['1']
+        if (typeMessage in allowedTypesMessage):
+            mailHTML=MailHTML(typeMessage)
+            html = mailHTML.generateHTML(jsonData)
+            senderMail=SenderMail(receiverEmail,html)
+            senderMail.sendMail()
+            print("mail wyslany do ",receiverEmail)
+        else:
+            print("Not correct type of message",receiverEmail)
 
     channel.basic_consume(queue=nameQueue, on_message_callback=callback, auto_ack=True)
     print(' [*] Waiting for messages. To exit press CTRL+C')

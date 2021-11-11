@@ -1,5 +1,0 @@
-{% if value == "" %}
-    {{ value }} puste
-{% else %}
-    {{ value }} nie puste
-{% endif %}
