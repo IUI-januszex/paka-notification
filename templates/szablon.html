@@ -1,0 +1,45 @@
+<html>
+    <body>
+        <a href="https://ibb.co/420TdSS"><img src="https://i.ibb.co/jzjMRww/januszex.png" alt="januszex" border="0"></a><br>
+            <font size="4" color=#67595E>
+                Hello 
+
+                {% if name != "" %}
+                    {{ name|e }}
+                {% endif %}
+                
+                {% if surname != "" %}
+                    {{ surname|e }}
+                {% endif %}
+                <br><br>
+
+                Your parcel has been <strong>succesfuly</strong> send 
+                {% if date != "" %}
+                    on {{date|e}} and it is on the way!
+                {% else %}
+                    and it is on the way!
+                {% endif %}
+                <br><br>
+                
+                {% if numberParcel != "" %}
+                    Your parcel number is: {{numberParcel|e}} 
+                {% endif %}
+                <br><br>
+
+                {% if pin != "" %}
+                    Here is your PIN to collect your parcel: {{pin|e}} 
+                {% endif %}
+                <br><br>
+                
+                {% if link != "" %}
+                    <a href={{link|e}}>Click here to track your parcel!</a>
+                {% endif %}
+                <br><br>
+    
+            <br></font>
+            <font size="5" color=#900020>
+            Thank you for choosing the best courier company.<br>
+            JanuszeX Courier Company<br>
+        </font>
+    </body>
+</html>
