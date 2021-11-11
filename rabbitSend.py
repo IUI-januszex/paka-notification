@@ -19,11 +19,11 @@ class RabbitMqSend():
 
 message = {
     'receiver_email': "michal.zawadzki66669@gmail.com", 
-    'name': 'michal',
+    'name': '<br>',
     'surname': 'zawadzki',
-    'numberParcel': '453255',
+    'numberParcel': '67',
     'pin': '123',
-    'date': '20 paz 2019',
+    'date': 'paz',
     'link':"link"
 }
 o=RabbitMqSend()

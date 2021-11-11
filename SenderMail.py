@@ -1,6 +1,9 @@
-import smtplib, ssl
+from smtplib import SMTP
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from jinja2 import Environment, FileSystemLoader
+import os
+
 
 class SenderMail():
     def __init__(self,receiver_email,html):
@@ -12,20 +15,19 @@ class SenderMail():
         receiver_email = self.receiver_email
         password = 'januszex123'
 
-        message = MIMEMultipart("alternative")
+        message = MIMEMultipart()
         message["Subject"] = "Parcel from Januszex"
         message["From"] = sender_email
         message["To"] = receiver_email
 
 
-        text = MIMEText(self.html, "html")
 
-        message.attach(text)
+        message.attach(MIMEText(self.html, "html"))
+        msgBody = message.as_string()
 
-        context = ssl.create_default_context()
 
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-            server.login(sender_email, password)
-            server.sendmail(
-                sender_email, receiver_email, message.as_string()
-            )
+        server = SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(sender_email, password)
+        server.sendmail(sender_email, receiver_email, msgBody)
+        server.quit()
