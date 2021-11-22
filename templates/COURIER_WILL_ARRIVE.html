@@ -1,0 +1,37 @@
+<html>
+    <body>
+        <a href="https://ibb.co/420TdSS"><img src="https://i.ibb.co/jzjMRww/januszex.png" alt="januszex" border="0"></a><br>
+            <font size="4" color=#67595E>
+                Hello,<br>
+                Our courier 
+                
+                {% if json.parcelId is not none %}
+                with parcel number: {{json.parcelId|e}}
+                {% endif %}
+                
+                should knock on the 
+                
+                {% if json.receiver is not none %}
+                {{json.receiver|e}} door soon<br>
+                {% else %}
+                receiver door soon<br>
+                {% endif %}
+        
+                
+                {% if json.arrivalDate is not none %}
+                Estimeted time of delivery is {{json.arrivalDate|e}}<br><br>
+                {% endif %}
+
+                {% if json.pin is not none %}
+                Here is your PIN to collect your parcel: {{json.pin|e}}<br><br>
+                {% endif %}
+
+                <br>
+                
+            <br></font>
+            <font size="5" color=#900020>
+            Thank you for choosing the best courier company.<br>
+            JanuszeX Courier Company<br>
+        </font>
+    </body>
+</html>

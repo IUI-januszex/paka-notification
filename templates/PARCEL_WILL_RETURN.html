@@ -1,0 +1,34 @@
+<html>
+    <body>
+        <a href="https://ibb.co/420TdSS"><img src="https://i.ibb.co/jzjMRww/januszex.png" alt="januszex" border="0"></a><br>
+            <font size="4" color=#67595E>
+                Hello,<br>
+                We have a bad news.
+
+
+                {% if json.receiver is not none %}
+                {{json.receiver|e}} 
+                {% else %}
+                Receiver
+                {% endif %}
+                did't collect parcel <br>
+
+                Now we must return the package to 
+                {% if json.sender is not none %}
+                {{json.sender|e}} 
+                {% else %}
+                sender
+                {% endif %}
+                <br>
+
+                {% if json.parcelId is not none %}
+                Parcel number is: {{json.parcelId|e}}<br><br>
+                {% endif %}
+                
+            <br></font>
+            <font size="5" color=#900020>
+            Thank you for choosing the best courier company.<br>
+            JanuszeX Courier Company<br>
+        </font>
+    </body>
+</html>

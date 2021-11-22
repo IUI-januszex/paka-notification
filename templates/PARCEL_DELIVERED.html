@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <a href="https://ibb.co/420TdSS"><img src="https://i.ibb.co/jzjMRww/januszex.png" alt="januszex" border="0"></a><br>
+            <font size="4" color=#67595E>
+                Hello,<br>
+                
+                Parcel
+
+                {% if json.sender is not none %}
+                from {{json.sender|e}}
+                {% endif %}
+
+                has just been delivered
+
+                {% if json.receiver is not none %}
+                to {{json.receiver|e}}
+                {% endif %}
+                <br>
+                {% if json.parcelId is not none %}
+                Parcel number is {{json.parcelId|e}}
+                {% endif %}
+                
+                
+            <br><br></font>
+            <font size="5" color=#900020>
+            Thank you for choosing the best courier company.<br>
+            JanuszeX Courier Company<br>
+        </font>
+    </body>
+</html>
