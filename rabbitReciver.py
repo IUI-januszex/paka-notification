@@ -11,7 +11,7 @@ def main():
         jsonData=json.loads(body)
         receiverEmail=jsonData['emailAddress']
         typeMessage=jsonData['notificationType']
-        allowedTypesMessage=["PARCEL_REGISTERED_SENDER","PARCEL_REGISTERED_RECEIVER","COURIER_WILL_ARRIVE","PARCEL_DELIVERED","PARCEL_WILL_RETURN"]
+        allowedTypesMessage=["PARCEL_REGISTERED_SENDER","PARCEL_REGISTERED_RECEIVER","COURIER_WILL_ARRIVE","PARCEL_DELIVERED","PARCEL_WILL_ARRIVE_TODAY"]
         if (typeMessage in allowedTypesMessage):
             mailHTML=MailHTML(typeMessage)
             html = mailHTML.generateHTML(jsonData)

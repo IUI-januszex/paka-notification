@@ -19,7 +19,7 @@ class RabbitMqSend():
 message = {
     'emailAddress': "michal.zawadzki66669@gmail.com", 
     'parcelId': "7584643347634",
-    'notificationType': "PARCEL_WILL_RETURN", 
+    'notificationType': "PARCEL_WILL_ARRIVE_TODAY", 
     'sender': 'mirek',
     'receiver': 'krzysiek',
     'pin': None,
