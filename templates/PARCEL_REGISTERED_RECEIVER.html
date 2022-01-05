@@ -13,17 +13,13 @@
                 to {{json.receiver|e}}
                 {% endif %}
                 <br><br>
-                {% if json.arrivalDate is not none %}
-                Estimeted time of delivery is {{json.arrivalDate|e}}<br><br>
-                {% endif %}
+
 
                 {% if json.parcelID is not none %}
                 Parcel number is: {{json.parcelID|e}}<br><br>
                 {% endif %}
 
-                {% if json.pin is not none %}
-                Here is your PIN to collect your parcel: {{json.pin|e}}<br><br>
-                {% endif %}
+
 
                 <br>
                 
