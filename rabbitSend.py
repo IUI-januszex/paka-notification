@@ -19,11 +19,11 @@ class RabbitMqSend():
 message = {
     'emailAddress': "michal.zawadzki66669@gmail.com", 
     'parcelId': "7584643347634",
-    'notificationType': "PARCEL_WILL_ARRIVE_TODAY", 
+    'notificationType': "COURIER_WILL_ARRIVE", 
     'sender': 'mirek',
     'receiver': 'krzysiek',
-    'pin': None,
-    'arrivalDate': None
+    'pin': "57654745",
+    'arrivalDate': "23.05.2014r"
 }
 o=RabbitMqSend()
 o.send(message)

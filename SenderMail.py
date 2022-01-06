@@ -11,9 +11,13 @@ class SenderMail():
         self.html=html
     
     def sendMail(self):
-        sender_email = "januszex.kurier@gmail.com"
+        # sender_email = "januszex.kurier@gmail.com"
+        # receiver_email = self.receiver_email
+        # password = 'januszex123'
+
+        sender_email = "januszex.3547635@gmail.com"
         receiver_email = self.receiver_email
-        password = 'januszex123'
+        password = 'JanuszeX7645'
 
         message = MIMEMultipart()
         message["Subject"] = "Parcel from Januszex"
